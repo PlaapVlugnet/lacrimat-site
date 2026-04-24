@@ -38,7 +38,7 @@ import webbrowser
 
 import requests
 
-REDIRECT_URI = "http://localhost:8888/callback"
+REDIRECT_URI = "http://127.0.0.1:8888/callback"
 SCOPE = "playlist-read-public"
 AUTHORIZE_URL = "https://accounts.spotify.com/authorize"
 TOKEN_URL = "https://accounts.spotify.com/api/token"  # noqa: S105
@@ -100,8 +100,8 @@ def main() -> int:
     webbrowser.open(url)
 
     # Listen for exactly one callback, then shut down.
-    server = http.server.HTTPServer(("localhost", 8888), CallbackHandler)
-    print("Waiting for callback on http://localhost:8888/callback ...")
+    server = http.server.HTTPServer(("127.0.0.1", 8888), CallbackHandler)
+    print("Waiting for callback on http://127.0.0.1:8888/callback ...")
     while _auth_code is None:
         server.handle_request()
 

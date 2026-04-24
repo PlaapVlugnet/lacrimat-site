@@ -10,7 +10,9 @@ lacrimat-site/
 ├── .github/workflows/update-playlists.yml  # weekly Spotify sync
 └── scripts/
     ├── update_playlists.py                 # run by the weekly Action
-    └── get_refresh_token.py                # one-time local helper
+    └── get_refresh_token.py                # NOT NEEDED for this workflow
+                                            # (only if you ever switch to
+                                            # reading private playlists)
 ```
 
 ---
@@ -33,31 +35,17 @@ lacrimat-site/
    - Name: anything (e.g. `lacrimat-site`)
    - Description: anything
    - Website: your Pages URL (optional)
-   - Redirect URI: `http://localhost:8888/callback`  *(must be exact)*
+   - Redirect URI: can be anything; we don't use it. `http://127.0.0.1/` is fine.
    - Which API/SDKs: **Web API** is enough
 3. After creation, open the app's **Settings** page and note:
    - **Client ID**
    - **Client secret** (click "View client secret")
 
----
-
-## Step 3 — Get a refresh token (one-time, local)
-
-This runs on your machine, not in the cloud. It catches Spotify's redirect on `localhost:8888`, so it has to be local.
-
-```bash
-cd path/to/lacrimat-site
-pip install requests
-export SPOTIFY_CLIENT_ID=xxxxxxxxxxxxxxxx
-export SPOTIFY_CLIENT_SECRET=xxxxxxxxxxxxxxxx
-python scripts/get_refresh_token.py
-```
-
-Your browser will open to Spotify's consent screen. Approve it. The terminal will then print the three values you need for GitHub secrets.
+Because we only read public playlists, the Action uses Spotify's Client Credentials flow — no browser consent step and no refresh token.
 
 ---
 
-## Step 4 — Add the three secrets to the repo
+## Step 3 — Add the two secrets to the repo
 
 On GitHub:
 
@@ -65,11 +53,10 @@ On GitHub:
 2. Add each of these (names must match exactly):
    - `SPOTIFY_CLIENT_ID`
    - `SPOTIFY_CLIENT_SECRET`
-   - `SPOTIFY_REFRESH_TOKEN`
 
 ---
 
-## Step 5 — Trigger the workflow once to verify
+## Step 4 — Trigger the workflow once to verify
 
 1. Repo **Actions** tab → pick **Update IB playlist archive** in the left sidebar → **Run workflow** → branch `main` → **Run workflow**.
 2. The run should finish in under a minute.

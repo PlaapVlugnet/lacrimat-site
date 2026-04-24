@@ -6,10 +6,12 @@ Fetches Matt's public Spotify playlists, finds the highest-numbered IB episode
 (e.g. IB077), and if that episode isn't already in index.html, inserts a new
 playlist-card before the trailing "New episode added each Monday" card.
 
+Auth: Spotify Client Credentials flow (app-level token, no user consent).
+That's enough because /users/{id}/playlists returns public playlists.
+
 Run from the repo root:
     SPOTIFY_CLIENT_ID=...
     SPOTIFY_CLIENT_SECRET=...
-    SPOTIFY_REFRESH_TOKEN=...
     python scripts/update_playlists.py
 
 Flags:
@@ -68,13 +70,18 @@ TRAILER_ANCHOR = (
 # Spotify auth + fetch
 # ----------------------------------------------------------------------------
 
-def refresh_access_token(client_id: str, client_secret: str, refresh_token: str) -> str:
-    """Exchange a stored refresh token for a short-lived access token."""
+def get_app_access_token(client_id: str, client_secret: str) -> str:
+    """Get an app-level access token via the Client Credentials flow.
+
+    This is all we need to read *public* playlists owned by any user. No
+    user consent and no refresh token required; the token lasts ~1 hour,
+    which is fine for a single Action run.
+    """
     basic = base64.b64encode(f"{client_id}:{client_secret}".encode()).decode()
     resp = requests.post(
         SPOTIFY_TOKEN_URL,
         headers={"Authorization": f"Basic {basic}"},
-        data={"grant_type": "refresh_token", "refresh_token": refresh_token},
+        data={"grant_type": "client_credentials"},
         timeout=30,
     )
     resp.raise_for_status()
@@ -236,10 +243,9 @@ def main() -> int:
 
     client_id = env("SPOTIFY_CLIENT_ID")
     client_secret = env("SPOTIFY_CLIENT_SECRET")
-    refresh_token = env("SPOTIFY_REFRESH_TOKEN")
 
     print(f"Fetching playlists for user '{args.user}'...", flush=True)
-    access_token = refresh_access_token(client_id, client_secret, refresh_token)
+    access_token = get_app_access_token(client_id, client_secret)
     playlists = fetch_all_playlists(access_token, args.user)
     print(f"  fetched {len(playlists)} owned playlists", flush=True)
 
