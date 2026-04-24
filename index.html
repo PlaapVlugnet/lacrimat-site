@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lacrimat</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ==========================================
+     NAV
+========================================== -->
+<nav>
+  <a href="#" class="nav-logo" onclick="showPage('lacrimat')">Lacrimat</a>
+  <ul class="nav-links">
+    <li><a href="#" onclick="showPage('lacrimat')" id="nav-lacrimat" class="active">Lacrimat</a></li>
+    <li><a href="#" onclick="showPage('radio')"    id="nav-radio">Intentionally Blank</a></li>
+    <li><a href="#" onclick="showPage('projects')" id="nav-projects">Projects</a></li>
+    <li><a href="#" onclick="showPage('spl')"      id="nav-spl">San Pedro Labs</a></li>
+  </ul>
+</nav>
+
+<!-- ==========================================
+     PAGE 1 - LACRIMAT
+========================================== -->
+<div class="page active" id="page-lacrimat">
+
+  <div class="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-rule"></div>
+    <div class="hero-eyebrow">Music Project</div>
+    <!-- LOGO: swap src below once you upload -->
+    <div class="logo-placeholder" id="lacrimat-logo">[ Logo ]</div>
+    <h1>Lacrimat</h1>
+    <p class="hero-sub">Electronic music built in shadow. Available on Bandcamp, Spotify, and Soundcloud.</p>
+  </div>
+
+  <div class="content">
+
+    <!-- UNRELEASED / DEMOS -->
+    <div class="section-label">Unreleased / Demos</div>
+
+    <div class="player-block">
+      <div class="player-meta">
+        <span class="player-title">Demo Material</span>
+        <span class="player-tag">SoundCloud &middot; Private</span>
+      </div>
+      <div class="player-embed">
+        <!-- Replace with your actual SoundCloud embed.
+             Go to your SoundCloud track -> Share -> Embed -> copy iframe src -->
+        <div class="placeholder" style="height:166px">
+          <div class="placeholder-icon">&#9654;</div>
+          <p>SoundCloud embed goes here</p>
+          <p style="font-size:9px;margin-top:0.25rem">Paste your SoundCloud iframe embed code</p>
+        </div>
+      </div>
+      <p class="player-desc">Unreleased material and works in progress. Sharing for select listeners.</p>
+    </div>
+
+    <div class="player-block">
+      <div class="player-meta">
+        <span class="player-title">Demo - Track 2</span>
+        <span class="player-tag">SoundCloud &middot; Private</span>
+      </div>
+      <div class="player-embed">
+        <div class="placeholder" style="height:166px">
+          <div class="placeholder-icon">&#9654;</div>
+          <p>SoundCloud embed goes here</p>
+          <p style="font-size:9px;margin-top:0.25rem">Paste your SoundCloud iframe embed code</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- RELEASED -->
+    <div class="section-label" style="margin-top:3rem">Released Material</div>
+
+    <div class="player-block">
+      <div class="player-meta">
+        <span class="player-title">Bandcamp</span>
+        <span class="player-tag">Bandcamp</span>
+      </div>
+      <div class="player-embed">
+        <!-- Replace with your Bandcamp embed.
+             Go to your release on BC -> Share/Embed -> copy the iframe -->
+        <div class="placeholder" style="height:400px">
+          <div class="placeholder-icon">&#9835;</div>
+          <p>Bandcamp embed goes here</p>
+          <p style="font-size:9px;margin-top:0.25rem">Paste your Bandcamp iframe embed code</p>
+        </div>
+      </div>
+      <div class="platform-links">
+        <a href="#" class="badge badge-bc">Bandcamp</a>
+        <a href="#" class="badge badge-sp">Spotify</a>
+        <a href="#" class="badge badge-sc">SoundCloud</a>
+        <a href="#" class="badge badge-sv">Subvert &#8599; (coming soon)</a>
+      </div>
+    </div>
+
+    <div class="player-block">
+      <div class="player-meta">
+        <span class="player-title">Spotify</span>
+        <span class="player-tag">Spotify</span>
+      </div>
+      <div class="player-embed">
+        <!-- Replace with Spotify embed.
+             On Spotify: right-click release -> Share -> Embed -> copy iframe -->
+        <div class="placeholder" style="height:352px">
+          <div class="placeholder-icon">&#9835;</div>
+          <p>Spotify embed goes here</p>
+          <p style="font-size:9px;margin-top:0.25rem">Paste your Spotify iframe embed code</p>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /content -->
+
+  <footer>
+    <span>Lacrimat</span>
+    <span>New Mexico</span>
+  </footer>
+</div>
+
+
+<!-- ==========================================
+     PAGE 2 - INTENTIONALLY BLANK
+========================================== -->
+<div class="page" id="page-radio">
+
+  <div class="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-rule"></div>
+    <div class="hero-eyebrow">Weekly Radio Show</div>
+    <h1>Intentionally<br><em>Blank</em></h1>
+    <p class="hero-sub">One hour of music with no agenda. Mondays 9–10pm MT on KMRD-LP Madrid, NM.</p>
+  </div>
+
+  <div class="content">
+
+    <!-- LISTEN LIVE -->
+    <div class="section-label">Listen Live</div>
+
+    <div class="show-info-grid">
+      <div class="show-info-cell">
+        <div class="label">Station</div>
+        <div class="value">KMRD-LP &middot; 96.9 FM</div>
+      </div>
+      <div class="show-info-cell">
+        <div class="label">Broadcast Area</div>
+        <div class="value">Madrid, New Mexico</div>
+      </div>
+      <div class="show-info-cell">
+        <div class="label">Day &amp; Time</div>
+        <div class="value">Mondays &middot; 9–10 PM Mountain</div>
+      </div>
+      <div class="show-info-cell">
+        <div class="label">Online Stream</div>
+        <div class="value"><a href="https://kmrd.fm/listen" target="_blank" rel="noopener">kmrd.fm/listen &#8599;</a></div>
+      </div>
+    </div>
+
+    <a href="https://kmrd.fm/listen" class="listen-btn" target="_blank" rel="noopener">
+      &#9673; &nbsp; Listen Live at kmrd.fm
+    </a>
+
+    <!-- PLAYLIST ARCHIVE -->
+    <div class="section-label">Playlist Archive</div>
+    <p style="font-size:12px;color:var(--fog);margin-bottom:1.5rem;letter-spacing:0.03em;">
+      Full playlists from each episode — available on Spotify.
+    </p>
+
+    <div class="playlist-grid">
+
+      <div class="playlist-card">
+        <div class="ep-num">IB001</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/29ZG0LKZlpdGTLLF293Upf" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB002</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/6y9Ho6NTMqtzAAtG57L4dw" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB003</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/4sq3isVyRzapqQRUfnEQLm" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB004</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/7IczCAlAf2f4bovWz7NP3G" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB005</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/36qBIgCbZJa0ZDdFv2oKLf" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB006</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/4DEnCguvhC8VDrJPUn5l85" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB007</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/3gV4go9gIjU8dP0kr7nSv5" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB008</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/67RFM5WlSNNqxu1iHWki2d" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB009</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/4VvoRxtUZ2bUml23vqqz1W" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB010</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/3dWabuLRwi81Fr4VeqKX8D" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB011</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/4KtnOBp9zULSoB4rBFYxxP" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB012</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/6L3FrKY0irw0QyUpLCOot8" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB013</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/7q4VWuWAt4O1X9WkAgal2c" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB014</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/0hjvhYYppaw7hRy0k99PmM" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB015</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/0FovQaKiTq8V6O2sIaZZte" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB016</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/6JSritmenzy66LnZRnW0dc" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB017</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/1z1FYbbXb3Ew0wUhbsxOqI" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB018</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/0lX6G17mx3hOiXuwi08Wut" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB019</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/4kZPu70zJkJK2GktMZsWP0" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB020</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/4UUU0kqCZjVMnU45MCuRzh" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB021</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/5UFnbBJyUULue80OzeOBFK" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB022</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/1ITqIGxscNbxN2zaZBRMMr" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB023</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/1a4G5XauknH3vr9gikyXFM" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB024</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/0PTNx4NeFkuXOieWTJe4dg" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB025</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/1VabBnBxCzpwfEbgHySOYd" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB026</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/38J67kFXcWfmwLhkTS3r5W" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB027</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/5ziCTDFitubqHLImMrxNQC" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB028</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/1UPshTVy9gk3iryNtD8noD" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB029</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/3iPXtrxxijZmYoun0piqHt" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB030</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/4fXgQSENyDO5JQOu3zerQT" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB031</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/6auH4toe5r5lbeuigWUXm1" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB032</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/2zOPO3fo5TgBkd8wYIlO9E" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB033</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/6CmYqwwBLukTCmfTeFxS6L" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB034</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/6T5EbQneq4N3TEHIwyAyLH" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB035</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/0nCDaZwFvbCD5X4rqpnRRg" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB036</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/4qXwVmmMGod75fiP8GSE18" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB037</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/1W58IdQjg71wFBHtmDWKa9" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB038</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/5MaLWPjvVD4M5rq2wwPmq5" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB039</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/5dxey48qq0K6SfwbjKOVVE" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB040</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/0dl3CsxSy2KAhdBdBsmjI6" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB041</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/0NP4Jpkho4rK36BSmx1OiY" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB042</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/2GJns3dijD9H5fQRMcENjz" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB043</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/3CUtNctEmALs5CkU6iYcsm" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB044</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/2HcYXOIndFUknojyrwFWUg" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB045</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/2hdbCA0wx9uMt5WDofNlgO" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB046</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/4LOIaL8j124hJaMr4cXF87" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB047</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/0h9VADjSZebmfUNtU9DlUG" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB048</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/5F6iXYXX5dy06dlZ1Gq5oy" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB049</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/33Km6ZvfgTVV6CCSITtxOU" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB050</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/2q2MbsImzW59L5eypDJGN8" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB051</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/6CvlcGivTi9k2hSjArZuHB" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB052</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/0hLI4cZlVCqVwYvtAtrXiu" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB053</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/37Zs8dZjBzjLiK58lz9rp2" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB054</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/2qOniwayWcNgVOv8evYhaq" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB055</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/3Bc0cjPuXbioMVMS3KxliO" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB056</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/4aT66kK1krIElLSuLnh4h6" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB057</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/0ab6N6TUL1qhP6OBDLgF0G" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB058</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/6yTwJEvEvXwyM8evT5Hdvm" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB059</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/4xdlncdze2Wd8j57ugxdu5" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB060 — Winter Solstice</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/5JI24Ih6Zzc273o7wbiE3N" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB061</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/61QFIApnJHB800AxEiC99Y" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB062</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/64Czw8HYSMquKjmlG7tWuD" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB063</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/7MECZh7UIfXKDCtXZunTXv" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB064</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/4U8faBYwR0WQ9XZfYUn4N0" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB065</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/0AKKGETKiIMwm0b8t9IruI" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB066</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/6IhsRlEnG53CSd25WkOvCi" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB067</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/6tGcvpdPEDvkNJ1dhcPHXZ" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB068</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/4vqwHGP6UnE6iCHafOEEAV" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB069</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/28uFpmsCYbRig4YQQzduuM" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB070</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/4lrjFiWyZTKqqB7R66Sj8g" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB071</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/23Fu1qzafjH3T9YEZGwGav" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB072</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/3hm4Cs4LTuhWT8v4jKcffW" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB073</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/2B1W894mmcMIraiV4AbtGE" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB074</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/32qnazoiNrYi4L1u1pXUs3" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB075</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/1jqKxB5Jz1xwWtTYgqtE4j" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card">
+        <div class="ep-num">IB076</div>
+        <div class="ep-title">Intentionally Blank</div>
+        <a href="https://open.spotify.com/playlist/2AnZ5MdNI2xpt9pSzpR5Dc" class="ep-link" target="_blank" rel="noopener">Open on Spotify &#8599;</a>
+      </div>
+
+      <div class="playlist-card" style="background:var(--ash);display:flex;align-items:center;justify-content:center;">
+        <p style="font-size:10px;color:var(--fog);letter-spacing:0.1em;text-align:center;">New episode added each Monday</p>
+      </div>
+
+    </div>
+
+  </div><!-- /content -->
+
+  <footer>
+    <span>Intentionally Blank</span>
+    <span>KMRD-LP &middot; Madrid NM</span>
+  </footer>
+</div>
+
+
+<!-- ==========================================
+     PAGE 3 - OTHER PROJECTS
+========================================== -->
+<div class="page" id="page-projects">
+
+  <div class="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-rule"></div>
+    <div class="hero-eyebrow">Other Work</div>
+    <h1>Other<br><em>Projects</em></h1>
+    <p class="hero-sub">Side projects, collaborations, and other musical identities.</p>
+  </div>
+
+  <div class="content">
+    <div class="section-label">Projects</div>
+
+    <!-- PROJECT 1 -->
+    <div class="project-block">
+      <div class="project-meta">
+        <div class="project-name">Project Name</div>
+        <div class="project-desc">Brief description of this project — its sound, origin, or intent. Add a sentence or two here.</div>
+        <div class="platform-links" style="padding:0;margin-top:auto">
+          <a href="#" class="badge badge-sc">SoundCloud</a>
+        </div>
+      </div>
+      <div class="project-player">
+        <div class="placeholder" style="height:166px">
+          <div class="placeholder-icon">&#9654;</div>
+          <p>SoundCloud embed goes here</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJECT 2 -->
+    <div class="project-block">
+      <div class="project-meta">
+        <div class="project-name">Project Name</div>
+        <div class="project-desc">Brief description of this project — its sound, origin, or intent.</div>
+        <div class="platform-links" style="padding:0;margin-top:auto">
+          <a href="#" class="badge badge-sc">SoundCloud</a>
+        </div>
+      </div>
+      <div class="project-player">
+        <div class="placeholder" style="height:166px">
+          <div class="placeholder-icon">&#9654;</div>
+          <p>SoundCloud embed goes here</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJECT 3 -->
+    <div class="project-block">
+      <div class="project-meta">
+        <div class="project-name">Project Name</div>
+        <div class="project-desc">Brief description of this project — its sound, origin, or intent.</div>
+        <div class="platform-links" style="padding:0;margin-top:auto">
+          <a href="#" class="badge badge-sc">SoundCloud</a>
+        </div>
+      </div>
+      <div class="project-player">
+        <div class="placeholder" style="height:166px">
+          <div class="placeholder-icon">&#9654;</div>
+          <p>SoundCloud embed goes here</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJECT 4 — add or remove blocks as needed -->
+    <div class="project-block">
+      <div class="project-meta">
+        <div class="project-name">Project Name</div>
+        <div class="project-desc">Brief description of this project — its sound, origin, or intent.</div>
+        <div class="platform-links" style="padding:0;margin-top:auto">
+          <a href="#" class="badge badge-sc">SoundCloud</a>
+        </div>
+      </div>
+      <div class="project-player">
+        <div class="placeholder" style="height:166px">
+          <div class="placeholder-icon">&#9654;</div>
+          <p>SoundCloud embed goes here</p>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /content -->
+
+  <footer>
+    <span>Other Projects</span>
+    <span>Matt &middot; New Mexico</span>
+  </footer>
+</div>
+
+
+<!-- ==========================================
+     PAGE 4 - SAN PEDRO LABS
+========================================== -->
+<div class="page" id="page-spl">
+
+  <div class="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-rule"></div>
+    <div class="hero-eyebrow">2010s &middot; Defunct</div>
+    <h1>San Pedro<br><em>Labs</em></h1>
+    <p class="hero-sub">Bespoke synthesizer design and construction. Each instrument built by hand to specification.</p>
+  </div>
+
+  <div class="content">
+
+    <div class="section-label">About</div>
+
+    <div class="spl-header">
+      <div class="spl-logo-placeholder">[ SPL Logo / Photo ]</div>
+      <p class="spl-about">
+        San Pedro Labs was a bespoke synthesizer building enterprise — each instrument conceived and constructed by hand to the client's specification. Though the studio has since closed, the instruments it produced are still out there, making sound in the world.
+        <br><br>
+        <span style="font-size:0.9rem;color:var(--fog);">Add your own history, dates, notable builds, or anything else you'd like to say about it here.</span>
+      </p>
+    </div>
+
+    <div class="section-label">Gallery</div>
+    <p style="font-size:11px;color:var(--fog);margin-bottom:1rem;letter-spacing:0.05em;">
+      Images sourced from the San Pedro Labs Facebook archive.
+      <br><a href="https://www.facebook.com" target="_blank" style="color:var(--ember-hi);font-size:10px;letter-spacing:0.1em;">View Facebook Page &#8599;</a>
+    </p>
+
+    <!-- GALLERY PLACEHOLDERS — replace with <img> tags pointing to your images -->
+    <div class="spl-gallery">
+      <div class="spl-img-placeholder">
+        <div style="font-size:1.5rem;opacity:0.15">&#11036;</div>
+        <p>Synth photo from Facebook</p>
+      </div>
+      <div class="spl-img-placeholder">
+        <div style="font-size:1.5rem;opacity:0.15">&#11036;</div>
+        <p>Synth photo from Facebook</p>
+      </div>
+      <div class="spl-img-placeholder">
+        <div style="font-size:1.5rem;opacity:0.15">&#11036;</div>
+        <p>Synth photo from Facebook</p>
+      </div>
+      <div class="spl-img-placeholder">
+        <div style="font-size:1.5rem;opacity:0.15">&#11036;</div>
+        <p>Synth photo from Facebook</p>
+      </div>
+      <div class="spl-img-placeholder">
+        <div style="font-size:1.5rem;opacity:0.15">&#11036;</div>
+        <p>Synth photo from Facebook</p>
+      </div>
+      <div class="spl-img-placeholder">
+        <div style="font-size:1.5rem;opacity:0.15">&#11036;</div>
+        <p>Synth photo from Facebook</p>
+      </div>
+    </div>
+
+  </div><!-- /content -->
+
+  <footer>
+    <span>San Pedro Labs</span>
+    <span>New Mexico &middot; Closed</span>
+  </footer>
+</div>
+
+
+<!-- ==========================================
+     JS - page routing
+========================================== -->
+<script>
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+  document.getElementById('page-' + id).classList.add('active');
+  document.getElementById('nav-' + id).classList.add('active');
+  window.scrollTo(0, 0);
+  return false;
+}
+
+// Prevent default on nav links
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', e => e.preventDefault());
+});
+</script>
+</body>
+</html>
