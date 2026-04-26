@@ -10,9 +10,8 @@ lacrimat-site/
 ├── .github/workflows/update-playlists.yml  # weekly Spotify sync
 └── scripts/
     ├── update_playlists.py                 # run by the weekly Action
-    └── get_refresh_token.py                # NOT NEEDED for this workflow
-                                            # (only if you ever switch to
-                                            # reading private playlists)
+    └── get_refresh_token.py                # run ONCE locally to get the
+                                            # SPOTIFY_REFRESH_TOKEN secret
 ```
 
 ---
@@ -22,7 +21,7 @@ lacrimat-site/
 1. Create a new **public** repo on GitHub. Two naming options:
    - `lacrimat-site`  →  site URL will be `https://mattzwager.github.io/lacrimat-site`
    - `mattzwager.github.io`  →  site URL will be `https://mattzwager.github.io`
-2. Drag the contents of this folder (everything inside `website/`) into the GitHub web UI's "upload files" flow on the default branch, or push via GitHub Desktop.
+2. Drag the contents of this folder (everything inside `website/`) into the GitHub web UI's "upload files" flow on the default branch, or push via GitHub Desktop. (Note: macOS Finder hides the `.github/` folder by default. Toggle it visible with **Cmd+Shift+.**, or use GitHub's "Create new file" with the path `.github/workflows/update-playlists.yml` to create the file directly in the web UI.)
 3. In the repo: **Settings → Pages**. Set *Source* to **Deploy from a branch**, branch `main`, folder `/ (root)`. Click Save.
 4. Wait ~30 seconds; Pages will show the live URL at the top of that same settings page.
 
@@ -35,17 +34,44 @@ lacrimat-site/
    - Name: anything (e.g. `lacrimat-site`)
    - Description: anything
    - Website: your Pages URL (optional)
-   - Redirect URI: can be anything; we don't use it. `http://127.0.0.1/` is fine.
+   - Redirect URI: must be exactly `http://127.0.0.1:8888/callback` (Spotify no longer accepts `localhost` — use the IP).
    - Which API/SDKs: **Web API** is enough
 3. After creation, open the app's **Settings** page and note:
    - **Client ID**
    - **Client secret** (click "View client secret")
 
-Because we only read public playlists, the Action uses Spotify's Client Credentials flow — no browser consent step and no refresh token.
+Why we need user auth (not just Client Credentials): as of late 2024, Spotify blocks app-only tokens from hitting `/v1/users/{id}/playlists`. Using a refresh token lets the script call `/v1/me/playlists` instead, which still works in Development Mode.
 
 ---
 
-## Step 3 — Add the two secrets to the repo
+## Step 3 — Get a refresh token (one-time, local)
+
+Run this on your own machine, in this folder:
+
+```bash
+export SPOTIFY_CLIENT_ID=<your client id>
+export SPOTIFY_CLIENT_SECRET=<your client secret>
+python scripts/get_refresh_token.py
+```
+
+It will:
+- Open your browser to Spotify's authorize page (scope: `playlist-read-private`).
+- Catch the redirect at `http://127.0.0.1:8888/callback`.
+- Print three values to copy into GitHub repo secrets.
+
+If the browser doesn't auto-open, the script prints a URL — paste it manually. After you click **Agree** on Spotify, the terminal will show:
+
+```
+SPOTIFY_CLIENT_ID     = ...
+SPOTIFY_CLIENT_SECRET = ...
+SPOTIFY_REFRESH_TOKEN = ...
+```
+
+The refresh token is long-lived; you only do this once.
+
+---
+
+## Step 4 — Add the three secrets to the repo
 
 On GitHub:
 
@@ -53,10 +79,11 @@ On GitHub:
 2. Add each of these (names must match exactly):
    - `SPOTIFY_CLIENT_ID`
    - `SPOTIFY_CLIENT_SECRET`
+   - `SPOTIFY_REFRESH_TOKEN`
 
 ---
 
-## Step 4 — Trigger the workflow once to verify
+## Step 5 — Trigger the workflow once to verify
 
 1. Repo **Actions** tab → pick **Update IB playlist archive** in the left sidebar → **Run workflow** → branch `main` → **Run workflow**.
 2. The run should finish in under a minute.
@@ -70,7 +97,7 @@ From then on, the Action runs automatically every Tuesday at 16:00 UTC (≈10 AM
 
 ## How the playlist naming is parsed
 
-The script scans every public playlist you own and looks for names matching:
+The script scans every playlist you own and looks for names matching:
 
 ```
 IB<number>[ <optional subtitle>]
@@ -89,6 +116,9 @@ The highest canonical number wins. If that number is already in `index.html`, no
 
 ```bash
 # Dry-run against the checked-in HTML (no file write):
+export SPOTIFY_CLIENT_ID=...
+export SPOTIFY_CLIENT_SECRET=...
+export SPOTIFY_REFRESH_TOKEN=...
 python scripts/update_playlists.py --dry-run
 
 # Run against a different file (e.g. a scratch copy):

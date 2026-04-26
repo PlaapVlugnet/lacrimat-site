@@ -1,0 +1,50 @@
+name: Update IB playlist archive
+
+on:
+  # Tuesdays at 16:00 UTC = 10:00 AM Mountain (DST) / 09:00 AM Mountain (Standard).
+  # Gives some buffer after the Monday 9-10pm MT broadcast.
+  schedule:
+    - cron: "0 16 * * 2"
+  # Allow manual runs from the Actions tab.
+  workflow_dispatch:
+
+permissions:
+  contents: write  # Needed to commit the updated index.html back to main.
+
+concurrency:
+  group: update-playlists
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: python -m pip install --upgrade pip requests
+
+      - name: Run playlist sync
+        env:
+          SPOTIFY_CLIENT_ID:     ${{ secrets.SPOTIFY_CLIENT_ID }}
+          SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
+          SPOTIFY_REFRESH_TOKEN: ${{ secrets.SPOTIFY_REFRESH_TOKEN }}
+        run: python scripts/update_playlists.py --html index.html
+
+      - name: Commit and push if index.html changed
+        run: |
+          if [[ -z "$(git status --porcelain index.html)" ]]; then
+            echo "No changes to index.html; skipping commit."
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "chore: add latest IB playlist [auto]"
+          git push
