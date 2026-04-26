@@ -11,6 +11,9 @@ on:
 permissions:
   contents: write  # Needed to commit the updated index.html back to main.
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
 concurrency:
   group: update-playlists
   cancel-in-progress: false
